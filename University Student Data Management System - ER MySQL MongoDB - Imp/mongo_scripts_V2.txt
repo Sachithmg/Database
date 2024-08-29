@@ -1,0 +1,855 @@
+use FinalDB;
+
+db.dropDatabase();
+
+use FinalDB;
+
+db.createCollection("Departments"); 
+db.Departments.createIndex({"dname" : 1});
+
+
+db.Departments.insertMany([
+    { "schema": 1, "dname": "Computer Engineering"},
+    { "schema": 1, "dname": "Computer Science"},
+	{ "schema": 1, "dname": "Mechanical Engineering"},
+	{ "schema": 1, "dname": "Electrical Engineering"},
+	{ "schema": 1, "dname": "Humanities"}
+]);
+
+db.Departments.countDocuments();
+
+var depComEng = db.Departments.findOne({"dname" : "Computer Engineering"},{_id: 1});
+var depComSci = db.Departments.findOne({"dname" : "Computer Science"},{_id: 1});
+var depMacEng = db.Departments.findOne({"dname" : "Mechanical Engineering"},{_id: 1});
+var depEleEng = db.Departments.findOne({"dname" : "Electrical Engineering"},{_id: 1});
+var depHum    = db.Departments.findOne({"dname" : "Humanities"},{_id: 1});
+
+db.createCollection("Students"); 
+db.Students.createIndex({"first_name" : 1});
+db.Students.createIndex({"last_name" : 1});
+db.Students.createIndex({"contact_details.email" : 1});
+
+db.Students.insertMany([
+    {
+        "schema": 1,
+        "first_name": "Liam",
+        "middle_name": "John",
+        "last_name": "Wilson",
+        "gender": "Male",
+        "date_of_birth": "2001-04-23",
+        "address": {
+            "house_no": "12",
+            "road_name": "High Street",
+            "area": "Central",
+            "city": "Wellington",
+            "country": "New Zealand",
+            "postcode": "6011"
+        },
+        "contact_details": {
+            "mobile_no": "021-123-4567",
+            "email": "liamwilson@email.com"
+        },
+        "departments": [
+            {
+                "department_id": depComEng._id, 
+                "is_primary": true,
+                "major_start_date": "2023-01-01"
+            },
+            {
+                "department_id": depComSci._id, 
+                "is_primary": false,
+                "major_start_date": "2023-01-01"
+            }
+        ]
+    },
+    {
+        "schema": 1,
+        "first_name": "Olivia",
+        "middle_name": "Jane",
+        "last_name": "Smith",
+        "gender": "Female",
+        "date_of_birth": "2002-05-19",
+        "address": {
+            "house_no": "34",
+            "road_name": "King Street",
+            "area": "East",
+            "city": "Auckland",
+            "country": "New Zealand",
+            "postcode": "1010"
+        },
+        "contact_details": {
+            "mobile_no": "022-234-5678",
+            "email": "olivia.smith@email.com"
+        },
+        "departments": [
+            {
+                "department_id": depComEng._id, 
+                "is_primary": true,
+                "major_start_date": "2023-01-01"
+            }
+        ]
+    },
+    {
+        "schema": 1,
+        "first_name": "Noah",
+        "middle_name": "James",
+        "last_name": "Brown",
+        "gender": "Male",
+        "date_of_birth": "2000-03-30",
+        "address": {
+            "house_no": "56",
+            "road_name": "Queen Street",
+            "area": "West",
+            "city": "Christchurch",
+            "country": "New Zealand",
+            "postcode": "8011"
+        },
+        "contact_details": {
+            "mobile_no": "023-345-6789",
+            "email": "noah.brown@email.com"
+        },
+        "departments": [
+            {
+                "department_id": depComEng._id, 
+                "is_primary": true,
+                "major_start_date": "2023-01-01"
+            }
+        ]
+    },
+    {
+        "schema": 1,
+        "first_name": "Emma",
+        "middle_name": "Charlotte",
+        "last_name": "Taylor",
+        "gender": "Female",
+        "date_of_birth": "2003-07-22",
+        "address": {
+            "house_no": "78",
+            "road_name": "Victoria Street",
+            "area": "South",
+            "city": "Dunedin",
+            "country": "New Zealand",
+            "postcode": "9016"
+        },
+        "contact_details": {
+            "mobile_no": "024-456-7890",
+            "email": "emma.taylor@email.com"
+        },
+        "departments": []
+    },
+    {
+        "schema": 1,
+        "first_name": "Sophia",
+        "middle_name": "Marie",
+        "last_name": "Jones",
+        "gender": "Female",
+        "date_of_birth": "1999-12-13",
+        "address": {
+            "house_no": "90",
+            "road_name": "Elizabeth Street",
+            "area": "North",
+            "city": "Hamilton",
+            "country": "New Zealand",
+            "postcode": "3204"
+        },
+        "contact_details": {
+            "mobile_no": "025-567-8901",
+            "email": "sophia.jones@email.com"
+        },
+        "departments": []
+    },
+    {
+        "schema": 1,
+        "first_name": "Mason",
+        "middle_name": "Alexander",
+        "last_name": "Lee",
+        "gender": "Male",
+        "date_of_birth": "2002-11-05",
+        "address": {
+            "house_no": "100",
+            "road_name": "Lincoln Road",
+            "area": "Central",
+            "city": "Tauranga",
+            "country": "New Zealand",
+            "postcode": "3110"
+        },
+        "contact_details": {
+            "mobile_no": "026-678-9012",
+            "email": "mason.lee@email.com"
+        },
+        "departments": []
+    },
+    {
+        "schema": 1,
+        "first_name": "Isabella",
+        "middle_name": "Ann",
+        "last_name": "Wilson",
+        "gender": "Female",
+        "date_of_birth": "2001-09-15",
+        "address": {
+            "house_no": "110",
+            "road_name": "Lake Road",
+            "area": "East",
+            "city": "Palmerston North",
+            "country": "New Zealand",
+            "postcode": "4410"
+        },
+        "contact_details": {
+            "mobile_no": "027-789-0123",
+            "email": "isabella.wilson@email.com"
+        },
+        "departments": []
+    },
+    {
+        "schema": 1,
+        "first_name": "Lucas",
+        "middle_name": "George",
+        "last_name": "Davis",
+        "gender": "Male",
+        "date_of_birth": "2002-02-20",
+        "address": {
+            "house_no": "120",
+            "road_name": "Park Avenue",
+            "area": "West",
+            "city": "Nelson",
+            "country": "New Zealand",
+            "postcode": "7010"
+        },
+        "contact_details": {
+            "mobile_no": "028-890-1234",
+            "email": "lucas.davis@email.com"
+        },
+        "departments": []
+    },
+    {
+        "schema": 1,
+        "first_name": "Mia",
+        "middle_name": "Elizabeth",
+        "last_name": "White",
+        "gender": "Female",
+        "date_of_birth": "2003-01-17",
+        "address": {
+            "house_no": "130",
+            "road_name": "Church Street",
+            "area": "South",
+            "city": "Invercargill",
+            "country": "New Zealand",
+            "postcode": "9810"
+        },
+        "contact_details": {
+            "mobile_no": "029-901-2345",
+            "email": "mia.white@email.com"
+        },
+        "departments": []
+    },
+    {
+        "schema": 1,
+        "first_name": "Ethan",
+        "middle_name": "Robert",
+        "last_name": "Martin",
+        "gender": "Male",
+        "date_of_birth": "1998-08-25",
+        "address": {
+            "house_no": "140",
+            "road_name": "Station Road",
+            "area": "North",
+            "city": "New Plymouth",
+            "country": "New Zealand",
+            "postcode": "4310"
+        },
+        "contact_details": {
+            "mobile_no": "030-012-3456",
+            "email": "ethan.martin@email.com"
+        },
+        "departments": []
+    }
+]);
+
+db.Students.countDocuments();
+
+var stdLiam = db.Students.findOne({"contact_details.email": "liamwilson@email.com"}, {_id: 1});
+var stdOlivia = db.Students.findOne({"contact_details.email": "olivia.smith@email.com"}, {_id: 1});
+var stdNoah = db.Students.findOne({"contact_details.email": "noah.brown@email.com"}, {_id: 1});
+var stdEmma = db.Students.findOne({"contact_details.email": "emma.taylor@email.com"}, {_id: 1});
+var stdSophia = db.Students.findOne({"contact_details.email": "sophia.jones@email.com"}, {_id: 1});
+var stdMason = db.Students.findOne({"contact_details.email": "mason.lee@email.com"}, {_id: 1});
+var stdIsabella = db.Students.findOne({"contact_details.email": "isabella.wilson@email.com"}, {_id: 1});
+var stdLucas = db.Students.findOne({"contact_details.email": "lucas.davis@email.com"}, {_id: 1});
+var stdMia = db.Students.findOne({"contact_details.email": "mia.white@email.com"}, {_id: 1});
+var stdEthan = db.Students.findOne({"contact_details.email": "ethan.martin@email.com"}, {_id: 1});
+
+
+db.createCollection("Courses"); 
+db.Courses.createIndex({"code" : 1});
+db.Courses.createIndex({"name" : 1});
+
+
+// Insert courses into the Courses collection
+db.Courses.insertMany([
+    {
+        "code": "GP106",
+        "name": "Introduction to Programming",
+        "description": "Learn the basics of programming.",
+        "credit": 3,
+        "level": 100,
+        "hours": 45,
+        "department_id": depComEng._id
+    },
+    {
+        "code": "CS205",
+        "name": "Data Structures",
+        "description": "Advanced data organization techniques.",
+        "credit": 3,
+        "level": 200,
+        "hours": 30,
+        "department_id": depComSci._id
+    },
+    {
+        "code": "CS303",
+        "name": "Operating Systems",
+        "description": "In-depth study of modern operating systems.",
+        "credit": 4,
+        "level": 300,
+        "hours": 60,
+        "department_id": depComSci._id
+    },
+    {
+        "code": "CS404",
+        "name": "Machine Learning",
+        "description": "Techniques and applications of machine learning.",
+        "credit": 4,
+        "level": 400,
+        "hours": 60,
+        "department_id": depComSci._id
+    },
+    {
+        "code": "ME101",
+        "name": "Intro to Mechanics",
+        "description": "Foundational mechanics for engineers.",
+        "credit": 3,
+        "level": 100,
+        "hours": 45,
+        "department_id": depMacEng._id
+    },
+    {
+        "code": "EE202",
+        "name": "Circuit Analysis",
+        "description": "Analyzing complex electrical circuits.",
+        "credit": 4,
+        "level": 200,
+        "hours": 50,
+        "department_id": depEleEng._id
+    },
+    {
+        "code": "HU103",
+        "name": "World History",
+        "description": "A survey of world historical events and figures.",
+        "credit": 3,
+        "level": 100,
+        "hours": 40,
+        "department_id": depHum._id
+    }
+]);
+
+db.Courses.countDocuments();
+
+
+var corGP106 = db.Courses.findOne({"code": "GP106"}, {_id: 1});
+var corCS205 = db.Courses.findOne({"code": "CS205"}, {_id: 1});
+var corCS303 = db.Courses.findOne({"code": "CS303"}, {_id: 1});
+var corCS404 = db.Courses.findOne({"code": "CS404"}, {_id: 1});
+var corME101 = db.Courses.findOne({"code": "ME101"}, {_id: 1});
+var corEE202 = db.Courses.findOne({"code": "EE202"}, {_id: 1});
+var corHU103 = db.Courses.findOne({"code": "HU103"}, {_id: 1});
+
+
+db.createCollection("Enrollments"); 
+db.Enrollments.createIndex({"semester.semester_name" : 1});
+
+db.Enrollments.insertMany([
+    {
+        "student_id": stdLiam._id,
+        "course_id": corGP106._id,
+        "semester": [
+            {
+                "semester_name": "2023-Jan",
+                "year": 2023,
+                "start_date": ISODate("2023-01-01"),
+                "end_date": ISODate("2023-03-31"),
+                "semester_grade": "A"
+            },
+            {
+                "semester_name": "2023-April",
+                "year": 2023,
+                "start_date": ISODate("2023-04-01"),
+                "end_date": ISODate("2023-06-30"),
+                "semester_grade": "A"
+            },
+            {
+                "semester_name": "2024-Jan",
+                "year": 2024,
+                "start_date": ISODate("2024-01-01"),
+                "end_date": ISODate("2024-03-31"),
+                "semester_grade": "A"
+            }
+        ],
+        "grade": "A"
+    },
+    {
+        "student_id": stdLiam._id,
+        "course_id": corCS303._id,
+        "semester": [
+            {
+                "semester_name": "2023-April",
+                "year": 2023,
+                "start_date": ISODate("2023-04-01"),
+                "end_date": ISODate("2023-06-30"),
+                "semester_grade": "B"
+            },
+            {
+                "semester_name": "2024-Jan",
+                "year": 2024,
+                "start_date": ISODate("2024-01-01"),
+                "end_date": ISODate("2024-03-31"),
+                "semester_grade": "B"
+            }
+        ],
+        "grade": "A"
+    },
+    {
+        "student_id": stdLiam._id,
+        "course_id": corCS205._id,
+        "semester": [
+            {
+                "semester_name": "2023-Jan",
+                "year": 2023,
+                "start_date": ISODate("2023-01-01"),
+                "end_date": ISODate("2023-03-31"),
+                "semester_grade": "C"
+            },
+            {
+                "semester_name": "2023-April",
+                "year": 2023,
+                "start_date": ISODate("2023-04-01"),
+                "end_date": ISODate("2023-06-30"),
+                "semester_grade": "B"
+            },
+            {
+                "semester_name": "2024-April",
+                "year": 2024,
+                "start_date": ISODate("2024-04-01"),
+                "end_date": ISODate("2024-06-30"),
+                "semester_grade": "B"
+            }
+        ],
+        "grade": "A"
+    },
+	{
+        "student_id": stdEmma._id,
+        "course_id": corCS205._id,
+        "semester": [
+            {
+                "semester_name": "2024-Jan",
+                "year": 2024,
+                "start_date": ISODate("2024-01-01"),
+                "end_date": ISODate("2024-03-31"),
+                "semester_grade": "A"
+            }
+        ],
+        "grade": "A"
+    },
+    {
+        "student_id": stdEmma._id,
+        "course_id": corME101._id,
+        "semester": [
+            {
+                "semester_name": "2024-Jan",
+                "year": 2024,
+                "start_date": ISODate("2024-01-01"),
+                "end_date": ISODate("2024-03-31"),
+                "semester_grade": "A"
+            }
+        ],
+        "grade": "A"
+    },
+    {
+        "student_id": stdSophia._id,
+        "course_id": corCS205._id,
+        "semester": [
+            {
+                "semester_name": "2024-Jan",
+                "year": 2024,
+                "start_date": ISODate("2024-01-01"),
+                "end_date": ISODate("2024-03-31"),
+                "semester_grade": "B"
+            }
+        ],
+        "grade": "B"
+    },
+    {
+        "student_id": stdSophia._id,
+        "course_id": corEE202._id,
+        "semester": [
+            {
+                "semester_name": "2024-Jan",
+                "year": 2024,
+                "start_date": ISODate("2024-01-01"),
+                "end_date": ISODate("2024-03-31"),
+                "semester_grade": "B"
+            }
+        ],
+        "grade": "B"
+    },
+    {
+        "student_id": stdMason._id,
+        "course_id": corCS303._id,
+        "semester": [
+            {
+                "semester_name": "2024-Jan",
+                "year": 2024,
+                "start_date": ISODate("2024-01-01"),
+                "end_date": ISODate("2024-03-31"),
+                "semester_grade": "C"
+            }
+        ],
+        "grade": "C"
+    },
+    {
+        "student_id": stdIsabella._id,
+        "course_id": corME101._id,
+        "semester": [
+            {
+                "semester_name": "2024-Jan",
+                "year": 2024,
+                "start_date": ISODate("2024-01-01"),
+                "end_date": ISODate("2024-03-31"),
+                "semester_grade": "D"
+            }
+        ],
+        "grade": "D"
+    },
+	{
+        "student_id": stdNoah._id,
+        "course_id": corGP106._id,
+        "semester": [
+            {
+                "semester_name": "2024-Jan",
+                "year": 2024,
+                "start_date": ISODate("2024-01-01"),
+                "end_date": ISODate("2024-03-31"),
+                "semester_grade": "C"
+            },
+            {
+                "semester_name": "2024-April",
+                "year": 2024,
+                "start_date": ISODate("2024-04-01"),
+                "end_date": ISODate("2024-06-30"),
+                "semester_grade": "B"
+            }
+        ],
+        "grade": "B"  // Assuming an overall grade if needed, or average out semester grades.
+    },
+    {
+        "student_id": stdNoah._id,
+        "course_id": corCS205._id,
+        "semester": [
+            {
+                "semester_name": "2024-Jan",
+                "year": 2024,
+                "start_date": ISODate("2024-01-01"),
+                "end_date": ISODate("2024-03-31"),
+                "semester_grade": "B"
+            }
+        ],
+        "grade": "B"
+    },
+	{
+        "student_id": stdOlivia._id,
+        "course_id": corGP106._id,
+        "semester": [
+            {
+                "semester_name": "2023-Oct",
+                "year": 2023,
+                "start_date": ISODate("2023-10-01"),
+                "end_date": ISODate("2023-12-31"),
+                "semester_grade": "A"
+            },
+            {
+                "semester_name": "2024-April",
+                "year": 2024,
+                "start_date": ISODate("2024-04-01"),
+                "end_date": ISODate("2024-06-30"),
+                "semester_grade": "A"
+            }
+        ],
+        "grade": "B"
+    },
+    {
+        "student_id": stdOlivia._id,
+        "course_id": corCS205._id,
+        "semester": [
+            {
+                "semester_name": "2023-April",
+                "year": 2023,
+                "start_date": ISODate("2023-04-01"),
+                "end_date": ISODate("2023-06-30"),
+                "semester_grade": "B"
+            },
+            {
+                "semester_name": "2024-April",
+                "year": 2024,
+                "start_date": ISODate("2024-04-01"),
+                "end_date": ISODate("2024-06-30"),
+                "semester_grade": "B"
+            }
+        ],
+        "grade": "B"
+    }
+]);
+
+
+
+db.Enrollments.countDocuments();
+
+
+//Query 1: Retrieve all students majoring in “Computer Engineering”.
+
+var depComEng = db.Departments.findOne({"dname": "Computer Engineering"}, {_id: 1});
+
+db.Students.aggregate([
+    {
+        $match: {
+            "departments.department_id": depComEng._id
+        }
+    },
+    {
+        $project: {
+            _id: 0,
+            first_name: 1,
+            middle_name: 1,
+            last_name: 1,
+            gender: 1,
+            date_of_birth: 1,
+            address: 1,
+            contact_details: 1,
+            departments: {
+                $filter: {
+                    input: "$departments",
+                    as: "department",
+                    cond: { $eq: ["$$department.department_id", depComEng._id] }
+                }
+            }
+        }
+    }
+]).pretty();
+
+//Query 2:List all courses along with the number of students enrolled in each.
+db.Courses.aggregate([
+    {
+        $lookup: {
+            from: "Enrollments",  // The collection to join with
+            localField: "_id",    // Field from the Courses collection
+            foreignField: "course_id",  // Field from the Enrollments collection
+            as: "enrollments"     // The array to which the joined documents will be added
+        }
+    },
+    {
+        $project: {
+            _id: 0,
+            code: 1,
+            name: 1,
+            numberOfStudents: { $size: "$enrollments" }  // Counts the number of entries in the enrollments array
+        }
+    }
+]).pretty();
+
+
+//Query 3: Find the average grade of students in the ‘GP106’ course for the ‘2024-April’ semester. 
+db.Enrollments.aggregate([
+    {
+        $lookup: {
+            from: "Courses",
+            localField: "course_id",
+            foreignField: "_id",
+            as: "course_details"
+        }
+    },
+    {
+        $unwind: "$course_details"
+    },
+    {
+        $match: {
+            "course_details.code": "GP106",
+            "semester.semester_name": "2024-April"
+        }
+    },
+    {
+        $project: {
+            grade: 1,
+            numericGrade: {
+                $switch: {
+                    branches: [
+                        { case: { $eq: ["$grade", "A"] }, then: 70 },
+                        { case: { $eq: ["$grade", "B"] }, then: 60 },
+                        { case: { $eq: ["$grade", "C"] }, then: 50 },
+                        { case: { $eq: ["$grade", "D"] }, then: 40 },
+                        { case: { $eq: ["$grade", "F"] }, then: 20 }
+                    ],
+                    default: 0
+                }
+            }
+        }
+    },
+    {
+        $group: {
+            _id: null,
+            averageGrade: { $avg: "$numericGrade" }
+        }
+    }
+]).pretty();
+
+
+//Query 4: Retrieve all students who have an ‘A’ grade in any course. 
+db.Enrollments.aggregate([
+    {
+        $match: {
+            grade: "A"  // Filter to include only enrollments where the grade is 'A'
+        }
+    },
+    {
+        $lookup: {
+            from: "Students",
+            localField: "student_id",
+            foreignField: "_id",
+            as: "student_info"
+        }
+    },
+    {
+        $lookup: {
+            from: "Courses",
+            localField: "course_id",
+            foreignField: "_id",
+            as: "course_info"
+        }
+    },
+    {
+        $unwind: "$student_info"  // Unwind the student_info array to simplify data structure
+    },
+    {
+        $unwind: "$course_info"  // Unwind the course_info array to simplify data structure
+    },
+    {
+        $project: {
+            _id: 0,  // Exclude the _id field for cleaner output
+            firstName: "$student_info.first_name",
+            middleName: "$student_info.middle_name",
+            lastName: "$student_info.last_name",
+            gender: "$student_info.gender",
+            email: "$student_info.contact_details.email",
+            courseCode: "$course_info.code",
+            courseName: "$course_info.name",
+            grade: "$grade"
+        }
+    }
+]).pretty();
+
+
+//Query 5:Find all students who are enrolled in more than 3 courses. 
+db.Students.aggregate([
+    {
+        $lookup: {
+            from: "Enrollments",
+            localField: "_id",
+            foreignField: "student_id",
+            as: "enrollments"
+        }
+    },
+    {
+        $project: {
+            firstName: "$first_name",
+            lastName: "$last_name",
+            email: "$contact_details.email",
+            totalCourses: { $size: "$enrollments" }
+        }
+    },
+    {
+        $match: {
+            totalCourses: { $gte: 3 }
+        }
+    }
+]).pretty();
+
+
+
+
+
+//	Query 6: Update grades for all students in the ‘GP106’ course for the ‘2024-April’ semester to ‘B’
+
+db.Enrollments.aggregate([
+    {
+        $match: {
+            "semester.semester_name": "2024-April"  // Filter for the specific semester at the start
+        }
+    },
+    {
+        $lookup: {
+            from: "Courses",
+            localField: "course_id",
+            foreignField: "_id",
+            as: "course_info"
+        }
+    },
+    {
+        $unwind: "$course_info"
+    },
+    {
+        $match: {
+            "course_info.code": "GP106"  // Filter for the specific course
+        }
+    },
+    {
+        $lookup: {
+            from: "Students",
+            localField: "student_id",
+            foreignField: "_id",
+            as: "student_info"
+        }
+    },
+    {
+        $unwind: "$student_info"
+    },
+    {
+        $project: {
+            _id: 0,
+            studentId: "$student_info._id",
+            firstName: "$student_info.first_name",
+            lastName: "$student_info.last_name",
+            email: "$student_info.contact_details.email",
+            courseCode: "$course_info.code",
+            courseName: "$course_info.name",
+            semester: "$semester.semester_name",  // Ensure the semester data comes from the enrollment document
+            grade: "$grade"
+        }
+    }
+]).pretty();
+
+// Find the ObjectId of the 'GP106' course
+var corGP106 = db.Courses.findOne({ code: "GP106" });
+
+if (corGP106) {
+    // Update the grade to 'A' for all enrollments in 'GP106' during '2024-April'
+    db.Enrollments.updateMany(
+        {
+            "semester.semester_name": "2024-April",
+            "course_id": corGP106._id
+        },
+        {
+            $set: {
+                "grade": "A"
+            }
+        }
+    );
+} else {
+    print("No course found with the code GP106");
+}
+
