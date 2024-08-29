@@ -1,0 +1,898 @@
+mysql> source D:/scripts/social_media_platform.sql;
++----------------------------------------------+
+| Promot for stage                             |
++----------------------------------------------+
+| Check for DB exist, if so, drop the database |
++----------------------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 8 rows affected (0.23 sec)
+
++-------------------------------------------------+
+| Promot for stage                                |
++-------------------------------------------------+
+| Create database 'social_media_platform' |
++-------------------------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Database changed
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
++------------------------+
+| Promot for stage       |
++------------------------+
+| Create table locations |
++------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.06 sec)
+
++-------------------------------------+
+| Promot for stage                    |
++-------------------------------------+
+| Insert records into locations table |
++-------------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
++---------------------+
+| Promot for stage    |
++---------------------+
+| Out locations table |
++---------------------+
+1 row in set (0.00 sec)
+
++------------+--------------+------------------------+-----------+
+| locationID | city         | state                  | country   |
++------------+--------------+------------------------+-----------+
+|          5 | Kandy        | Central Province       | Sri Lanka |
+|          6 | Colombo      | Western Province       | Sri Lanka |
+|          7 | Galle        | Southern Province      | Sri Lanka |
+|          8 | Nuwara Eliya | Central Province       | Sri Lanka |
+|          9 | Trincomalee  | Eastern Province       | Sri Lanka |
+|         10 | Anuradhapura | North Central Province | Sri Lanka |
+|         11 | Jaffna       | Northern Province      | Sri Lanka |
+|         12 | Bentota      | Southern Province      | Sri Lanka |
+|         13 | Dambulla     | Central Province       | Sri Lanka |
+|         14 | Hikkaduwa    | Southern Province      | Sri Lanka |
+|         15 | Gampaha      | Western Province       | Sri Lanka |
++------------+--------------+------------------------+-----------+
+11 rows in set (0.00 sec)
+
++--------------------+
+| Promot for stage   |
++--------------------+
+| Create users table |
++--------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected, 2 warnings (0.34 sec)
+
++--------------------------------------------------------------------------------------------+
+| Promot for stage                                                                           |
++--------------------------------------------------------------------------------------------+
+| Insert 10 records users table, location table is refered to pick location ID based on City |
++--------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 1 row affected (0.03 sec)
+
+Query OK, 1 row affected (0.04 sec)
+
+Query OK, 1 row affected (0.05 sec)
+
+Query OK, 1 row affected (0.03 sec)
+
+Query OK, 1 row affected (0.03 sec)
+
+Query OK, 1 row affected (0.03 sec)
+
+Query OK, 1 row affected (0.06 sec)
+
+Query OK, 1 row affected (0.05 sec)
+
+Query OK, 1 row affected (0.05 sec)
+
+Query OK, 1 row affected (0.05 sec)
+
++------------------+
+| Promot for stage |
++------------------+
+| Out users table  |
++------------------+
+1 row in set (0.00 sec)
+
++--------+------------+-------------+-----------+--------------------------------+------------+--------+------------+----------------------+------------------+
+| userID | first_name | middle_name | last_name | email                          | dob        | gender | password   | home_town_locationID | lives_locationID |
++--------+------------+-------------+-----------+--------------------------------+------------+--------+------------+----------------------+------------------+
+|      5 | John       | A.          | Doe       | johndoe@socialmedia.com        | 2000-05-15 | M      | password1  |                    5 |                6 |
+|      6 | Jane       | NULL        | Smith     | janesmith@socialmedia.com      | 1988-09-21 | F      | password2  |                    6 |                5 |
+|      7 | David      | C.          | Johnson   | davidjohnson@socialmedia.com   | 1992-02-08 | M      | password3  |                    7 |                7 |
+|      8 | Sarah      | E.          | Wilson    | sarahwilson@socialmedia.com    | 1995-11-30 | F      | password4  |                    8 |                8 |
+|      9 | Michael    | R.          | Brown     | michaelbrown@socialmedia.com   | 1987-07-18 | M      | password5  |                    9 |               10 |
+|     10 | Emily      | M.          | Taylor    | emilytaylor@socialmedia.com    | 1991-04-03 | F      | password6  |                   11 |               12 |
+|     11 | Daniel     | J.          | Anderson  | danielanderson@socialmedia.com | 1989-12-12 | M      | password7  |                   12 |               11 |
+|     12 | Olivia     | K.          | Miller    | oliviamiller@socialmedia.com   | 1993-06-25 | F      | password8  |                   13 |               13 |
+|     13 | Thomas     | L.          | Davis     | thomasdavis@socialmedia.com    | 1994-09-10 | M      | password9  |                    6 |                5 |
+|     14 | Sophia     | N.          | Wilson    | sophiawilson@socialmedia.com   | 2005-03-27 | F      | password10 |                    5 |                6 |
++--------+------------+-------------+-----------+--------------------------------+------------+--------+------------+----------------------+------------------+
+10 rows in set (0.00 sec)
+
++----------------------+
+| Promot for stage     |
++----------------------+
+| Create friends table |
++----------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.35 sec)
+
++--------------------------------------+
+| Promot for stage                     |
++--------------------------------------+
+| Alter friends table for foreign keys |
++--------------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.19 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (1.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
++---------------------------------+
+| Promot for stage                |
++---------------------------------+
+| Insert records to friends table |
++---------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.05 sec)
+
+Query OK, 1 row affected (0.05 sec)
+
+Query OK, 1 row affected (0.05 sec)
+
+Query OK, 1 row affected (0.03 sec)
+
+Query OK, 1 row affected (0.03 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
++-------------------+
+| Promot for stage  |
++-------------------+
+| Out friends table |
++-------------------+
+1 row in set (0.00 sec)
+
++---------+---------+------------+
+| userID1 | userID2 | date       |
++---------+---------+------------+
+|       5 |       6 | 2023-06-19 |
+|       5 |      13 | 2023-06-19 |
+|       6 |       7 | 2023-06-19 |
+|       7 |       8 | 2023-06-19 |
+|       8 |       9 | 2023-06-19 |
+|       9 |      10 | 2023-06-19 |
+|      10 |      11 | 2023-06-19 |
+|      11 |      12 | 2023-06-19 |
+|      12 |      13 | 2023-06-19 |
+|      13 |      14 | 2023-06-19 |
+|      14 |       5 | 2023-06-19 |
++---------+---------+------------+
+11 rows in set (0.00 sec)
+
++---------------------+
+| Promot for stage    |
++---------------------+
+| Create albums table |
++---------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.09 sec)
+
++--------------------------------+
+| Promot for stage               |
++--------------------------------+
+| Insert records to albums table |
++--------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.03 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
++------------------+
+| Promot for stage |
++------------------+
+| Out albums table |
++------------------+
+1 row in set (0.00 sec)
+
++---------+---------------------+------------+--------+
+| albumID | name                | date       | userID |
++---------+---------------------+------------+--------+
+|       5 | Summer Vacation     | 2023-06-19 |      5 |
+|       6 | New Year 2023       | 2023-06-19 |      5 |
+|       7 | Family Reunion      | 2023-06-19 |      6 |
+|       8 | Hiking Adventures   | 2023-06-19 |      7 |
+|       9 | Beach Party         | 2023-06-19 |      8 |
+|      10 | Road Trip Memories  | 2023-06-19 |      9 |
+|      11 | City Exploration    | 2023-06-19 |     10 |
+|      12 | Friends             | 2023-06-19 |     10 |
+|      13 | Nature Photography  | 2023-06-19 |     11 |
+|      14 | Festival Highlights | 2023-06-19 |     12 |
+|      15 | Artistic Creations  | 2023-06-19 |     13 |
+|      16 | Wedding Memories    | 2023-06-19 |     14 |
++---------+---------------------+------------+--------+
+12 rows in set (0.00 sec)
+
++---------------------+
+| Promot for stage    |
++---------------------+
+| Create photos table |
++---------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.15 sec)
+
++--------------------------------+
+| Promot for stage               |
++--------------------------------+
+| Insert records to photos table |
++--------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.28 sec)
+
+Query OK, 1 row affected (0.85 sec)
+
+Query OK, 1 row affected (0.14 sec)
+
+Query OK, 1 row affected (0.28 sec)
+
+Query OK, 1 row affected (0.10 sec)
+
++------------------+
+| Promot for stage |
++------------------+
+| Out photos table |
++------------------+
+1 row in set (0.00 sec)
+
++---------+---------------------------+------------+------------+---------+
+| photoID | caption                   | data       | locationID | albumID |
++---------+---------------------------+------------+------------+---------+
+|       5 | Summer Vacation Photo     |        |          5 |       5 |
+|       6 | New Year 2023 Photo       |        |       NULL |       6 |
+|       7 | Family Reunion Photo      |        |          6 |       7 |
+|       8 | Hiking Adventures Photo   |        |          7 |       8 |
+|       9 | Beach Party Photo         |        |          8 |       9 |
+|      10 | Road Trip Memories Photo  |        |          9 |      10 |
+|      11 | City Exploration Photo    |        |         15 |      11 |
+|      12 | Friends Photo             |        |         11 |      12 |
+|      13 | Nature Photography Photo  |        |         12 |      13 |
+|      14 | Festival Highlights Photo |        |         13 |      14 |
++---------+---------------------------+------------+------------+---------+
+10 rows in set (0.00 sec)
+
++---------------------+
+| Promot for stage    |
++---------------------+
+| Create videos table |
++---------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.10 sec)
+
++--------------------------------+
+| Promot for stage               |
++--------------------------------+
+| Insert records to videos table |
++--------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
++------------------+
+| Promot for stage |
++------------------+
+| Out videos table |
++------------------+
+1 row in set (0.00 sec)
+
++---------+---------------------------+------------+------------+---------+
+| videoID | caption                   | data       | locationID | albumID |
++---------+---------------------------+------------+------------+---------+
+|       5 | Artistic Creations Video  |        |          6 |      15 |
+|       6 | Wedding Memories Video    |        |       NULL |      16 |
+|       7 | Family Reunion Video      |        |          6 |       7 |
+|       8 | Hiking Adventures Video   |        |          7 |       8 |
+|       9 | Beach Party Video         |        |          8 |       9 |
+|      10 | Road Trip Memories Video  |        |          9 |      10 |
+|      11 | City Exploration Video    |        |         15 |      11 |
+|      12 | Friends Video             |        |         11 |      12 |
+|      13 | Nature Photography Video  |        |         12 |      13 |
+|      14 | Festival Highlights Video |        |         13 |      14 |
++---------+---------------------------+------------+------------+---------+
+10 rows in set (0.00 sec)
+
++--------------------+
+| Promot for stage   |
++--------------------+
+| Create posts table |
++--------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.65 sec)
+
++-------------------------------+
+| Promot for stage              |
++-------------------------------+
+| Insert records to Posts table |
++-------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
++------------------+
+| Promot for stage |
++------------------+
+| Out Posts table  |
++------------------+
+1 row in set (0.00 sec)
+
++--------+----------------------+---------------+-----------------+---------+
+| postID | topic                | creation_date | creation_userID | albumID |
++--------+----------------------+---------------+-----------------+---------+
+|      5 | Amazing sunset       | 2023-06-19    |               5 |       5 |
+|      6 | Family gathering     | 2023-06-19    |               6 |       7 |
+|      7 | Exploring nature     | 2023-06-19    |               7 |       8 |
+|      8 | Fun at the beach     | 2023-06-19    |               8 |       9 |
+|      9 | Road trip memories   | 2023-06-19    |               9 |      10 |
+|     10 | City skyline         | 2023-06-19    |              10 |      11 |
+|     11 | Artistic expressions | 2023-06-19    |              11 |      13 |
+|     12 | Festival moments     | 2023-06-19    |              12 |      14 |
+|     13 | Creative artwork     | 2023-06-19    |              13 |      15 |
+|     14 | Wedding bliss        | 2023-06-19    |              14 |      16 |
+|     15 | Wedding              | 2023-06-19    |               5 |      16 |
++--------+----------------------+---------------+-----------------+---------+
+11 rows in set (0.00 sec)
+
++-----------------------+
+| Promot for stage      |
++-----------------------+
+| Create comments table |
++-----------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.10 sec)
+
++----------------------------------+
+| Promot for stage                 |
++----------------------------------+
+| Insert records to comments table |
++----------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.03 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.03 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.03 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.03 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
++--------------------+
+| Promot for stage   |
++--------------------+
+| Out comments table |
++--------------------+
+1 row in set (0.00 sec)
+
++--------+--------+------------+---------------------------------+
+| postID | userID | date       | text                            |
++--------+--------+------------+---------------------------------+
+|      5 |      5 | 2023-06-19 | Beautiful photo!                |
+|      5 |      6 | 2023-06-19 | I wish I could be there!        |
+|      6 |      7 | 2023-06-19 | Great to see everyone together! |
+|      6 |      8 | 2023-06-19 | Such a lovely family photo!     |
+|      7 |      9 | 2023-06-19 | What a breathtaking view!       |
+|      7 |     10 | 2023-06-19 | Nature at its finest!           |
+|      8 |     11 | 2023-06-19 | Wish I could join you guys!     |
+|      8 |     12 | 2023-06-19 | Looks like a great time!        |
+|      9 |     13 | 2023-06-19 | Such fond memories!             |
+|      9 |     14 | 2023-06-19 | Road trips are the best!        |
+|     10 |      5 | 2023-06-19 | What a stunning cityscape!      |
+|     10 |      6 | 2023-06-19 | I love the city lights!         |
+|     11 |      7 | 2023-06-19 | Beautiful artwork!              |
+|     11 |      8 | 2023-06-19 | You're so talented!             |
+|     12 |      9 | 2023-06-19 | I miss those festive vibes!     |
+|     12 |     10 | 2023-06-19 | Such a fun event!               |
++--------+--------+------------+---------------------------------+
+16 rows in set (0.00 sec)
+
++-------------------------------------------------+
+| Promot for stage                                |
++-------------------------------------------------+
+| 1. Find location-based photos and videos posted |
++-------------------------------------------------+
+1 row in set (0.00 sec)
+
++-------+------------------+-----------+-----------------------+------------+-----------------+------------+-----------+
+| city  | state            | country   | caption               | media_type | album_name      | first_name | last_name |
++-------+------------------+-----------+-----------------------+------------+-----------------+------------+-----------+
+| Kandy | Central Province | Sri Lanka | Summer Vacation Photo | Photo      | Summer Vacation | John       | Doe       |
++-------+------------------+-----------+-----------------------+------------+-----------------+------------+-----------+
+1 row in set (0.00 sec)
+
++-------------------------------------------------------------------------------------------------+
+| Promot for stage                                                                                |
++-------------------------------------------------------------------------------------------------+
+| 2. Find location-based photos and videos posted. City starting with 'C' with LIKE pattern match |
++-------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++---------+------------------+-----------+--------------------------+------------+--------------------+------------+-----------+
+| city    | state            | country   | caption                  | media_type | album_name         | first_name | last_name |
++---------+------------------+-----------+--------------------------+------------+--------------------+------------+-----------+
+| Colombo | Western Province | Sri Lanka | Family Reunion Photo     | Photo      | Family Reunion     | Jane       | Smith     |
+| Colombo | Western Province | Sri Lanka | Artistic Creations Video | Video      | Artistic Creations | Thomas     | Davis     |
+| Colombo | Western Province | Sri Lanka | Family Reunion Video     | Video      | Family Reunion     | Jane       | Smith     |
++---------+------------------+-----------+--------------------------+------------+--------------------+------------+-----------+
+3 rows in set (0.00 sec)
+
++---------------------------------------------------------------------------------------------------+
+| Promot for stage                                                                                  |
++---------------------------------------------------------------------------------------------------+
+| 3. Find location-based photos and videos posted. City starting with 'C' with REGEXP pattern match |
++---------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++---------+------------------+-----------+--------------------------+------------+--------------------+------------+-----------+
+| city    | state            | country   | caption                  | media_type | album_name         | first_name | last_name |
++---------+------------------+-----------+--------------------------+------------+--------------------+------------+-----------+
+| Colombo | Western Province | Sri Lanka | Family Reunion Photo     | Photo      | Family Reunion     | Jane       | Smith     |
+| Colombo | Western Province | Sri Lanka | Artistic Creations Video | Video      | Artistic Creations | Thomas     | Davis     |
+| Colombo | Western Province | Sri Lanka | Family Reunion Video     | Video      | Family Reunion     | Jane       | Smith     |
++---------+------------------+-----------+--------------------------+------------+--------------------+------------+-----------+
+3 rows in set (0.00 sec)
+
++-----------------------------------------------------------------------------------------------------------------------------+
+| Promot for stage                                                                                                            |
++-----------------------------------------------------------------------------------------------------------------------------+
+| 4. Find location-based photos and videos posted. City starting with 'B'  and 'G' having 7 letters with REGEXP pattern match |
++-----------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++---------+-------------------+-----------+--------------------------+------------+--------------------+------------+-----------+
+| city    | state             | country   | caption                  | media_type | album_name         | first_name | last_name |
++---------+-------------------+-----------+--------------------------+------------+--------------------+------------+-----------+
+| Bentota | Southern Province | Sri Lanka | Nature Photography Photo | Photo      | Nature Photography | Daniel     | Anderson  |
+| Gampaha | Western Province  | Sri Lanka | City Exploration Photo   | Photo      | City Exploration   | Emily      | Taylor    |
+| Bentota | Southern Province | Sri Lanka | Nature Photography Video | Video      | Nature Photography | Daniel     | Anderson  |
+| Gampaha | Western Province  | Sri Lanka | City Exploration Video   | Video      | City Exploration   | Emily      | Taylor    |
++---------+-------------------+-----------+--------------------------+------------+--------------------+------------+-----------+
+4 rows in set (0.00 sec)
+
++----------------------------------------------------------------------------------------------------------------------+
+| Promot for stage                                                                                                     |
++----------------------------------------------------------------------------------------------------------------------+
+| 5. Find location-based photos and videos posted. City having 'B'  and 'G' letters anywhere with REGEXP pattern match |
++----------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++----------+-------------------+-----------+---------------------------+------------+---------------------+------------+-----------+
+| city     | state             | country   | caption                   | media_type | album_name          | first_name | last_name |
++----------+-------------------+-----------+---------------------------+------------+---------------------+------------+-----------+
+| Colombo  | Western Province  | Sri Lanka | Family Reunion Photo      | Photo      | Family Reunion      | Jane       | Smith     |
+| Galle    | Southern Province | Sri Lanka | Hiking Adventures Photo   | Photo      | Hiking Adventures   | David      | Johnson   |
+| Bentota  | Southern Province | Sri Lanka | Nature Photography Photo  | Photo      | Nature Photography  | Daniel     | Anderson  |
+| Dambulla | Central Province  | Sri Lanka | Festival Highlights Photo | Photo      | Festival Highlights | Olivia     | Miller    |
+| Gampaha  | Western Province  | Sri Lanka | City Exploration Photo    | Photo      | City Exploration    | Emily      | Taylor    |
+| Colombo  | Western Province  | Sri Lanka | Artistic Creations Video  | Video      | Artistic Creations  | Thomas     | Davis     |
+| Colombo  | Western Province  | Sri Lanka | Family Reunion Video      | Video      | Family Reunion      | Jane       | Smith     |
+| Galle    | Southern Province | Sri Lanka | Hiking Adventures Video   | Video      | Hiking Adventures   | David      | Johnson   |
+| Bentota  | Southern Province | Sri Lanka | Nature Photography Video  | Video      | Nature Photography  | Daniel     | Anderson  |
+| Dambulla | Central Province  | Sri Lanka | Festival Highlights Video | Video      | Festival Highlights | Olivia     | Miller    |
+| Gampaha  | Western Province  | Sri Lanka | City Exploration Video    | Video      | City Exploration    | Emily      | Taylor    |
++----------+-------------------+-----------+---------------------------+------------+---------------------+------------+-----------+
+11 rows in set (0.00 sec)
+
++-----------------------------+
+| Promot for stage            |
++-----------------------------+
+| 6. No of comments per album |
++-----------------------------+
+1 row in set (0.00 sec)
+
++---------+---------------------+--------------+
+| albumID | album_name          | num_comments |
++---------+---------------------+--------------+
+|      15 | Artistic Creations  |            0 |
+|       9 | Beach Party         |            2 |
+|      11 | City Exploration    |            2 |
+|       7 | Family Reunion      |            2 |
+|      14 | Festival Highlights |            2 |
+|      12 | Friends             |            0 |
+|       8 | Hiking Adventures   |            2 |
+|      13 | Nature Photography  |            2 |
+|       6 | New Year 2023       |            0 |
+|      10 | Road Trip Memories  |            2 |
+|       5 | Summer Vacation     |            2 |
+|      16 | Wedding Memories    |            0 |
++---------+---------------------+--------------+
+12 rows in set (0.00 sec)
+
++----------------------------+
+| Promot for stage           |
++----------------------------+
+| 7. Album only having video |
++----------------------------+
+1 row in set (0.00 sec)
+
++------------+-----------+--------------------+--------------------------+
+| first_name | last_name | album_name         | video_caption            |
++------------+-----------+--------------------+--------------------------+
+| Thomas     | Davis     | Artistic Creations | Artistic Creations Video |
+| Sophia     | Wilson    | Wedding Memories   | Wedding Memories Video   |
++------------+-----------+--------------------+--------------------------+
+2 rows in set (0.00 sec)
+
++--------------------------------------------+
+| Promot for stage                           |
++--------------------------------------------+
+| 8. Albums commented by others not by owner |
++--------------------------------------------+
+1 row in set (0.00 sec)
+
++------------+-----------+---------------------+----------------------+---------------------------------+---------------------------+--------------------------+
+| first_name | last_name | album_name          | post_topic           | comment_text                    | commented_user_first_name | commented_user_last_name |
++------------+-----------+---------------------+----------------------+---------------------------------+---------------------------+--------------------------+
+| John       | Doe       | Summer Vacation     | Amazing sunset       | I wish I could be there!        | Jane                      | Smith                    |
+| Jane       | Smith     | Family Reunion      | Family gathering     | Great to see everyone together! | David                     | Johnson                  |
+| Jane       | Smith     | Family Reunion      | Family gathering     | Such a lovely family photo!     | Sarah                     | Wilson                   |
+| David      | Johnson   | Hiking Adventures   | Exploring nature     | What a breathtaking view!       | Michael                   | Brown                    |
+| David      | Johnson   | Hiking Adventures   | Exploring nature     | Nature at its finest!           | Emily                     | Taylor                   |
+| Sarah      | Wilson    | Beach Party         | Fun at the beach     | Wish I could join you guys!     | Daniel                    | Anderson                 |
+| Sarah      | Wilson    | Beach Party         | Fun at the beach     | Looks like a great time!        | Olivia                    | Miller                   |
+| Michael    | Brown     | Road Trip Memories  | Road trip memories   | Such fond memories!             | Thomas                    | Davis                    |
+| Michael    | Brown     | Road Trip Memories  | Road trip memories   | Road trips are the best!        | Sophia                    | Wilson                   |
+| Emily      | Taylor    | City Exploration    | City skyline         | What a stunning cityscape!      | John                      | Doe                      |
+| Emily      | Taylor    | City Exploration    | City skyline         | I love the city lights!         | Jane                      | Smith                    |
+| Daniel     | Anderson  | Nature Photography  | Artistic expressions | Beautiful artwork!              | David                     | Johnson                  |
+| Daniel     | Anderson  | Nature Photography  | Artistic expressions | You're so talented!             | Sarah                     | Wilson                   |
+| Olivia     | Miller    | Festival Highlights | Festival moments     | I miss those festive vibes!     | Michael                   | Brown                    |
+| Olivia     | Miller    | Festival Highlights | Festival moments     | Such a fun event!               | Emily                     | Taylor                   |
++------------+-----------+---------------------+----------------------+---------------------------------+---------------------------+--------------------------+
+15 rows in set (0.00 sec)
+
++--------------------------------------------------------+
+| Promot for stage                                       |
++--------------------------------------------------------+
+| 9. Find the comments made by specific user’s friends |
++--------------------------------------------------------+
+1 row in set (0.00 sec)
+
++-----------------------------+------------+-----------+
+| comment_text                | first_name | last_name |
++-----------------------------+------------+-----------+
+| Wish I could join you guys! | Daniel     | Anderson  |
++-----------------------------+------------+-----------+
+1 row in set (0.00 sec)
+
++--------------------------------------------------------------------------------+
+| Promot for stage                                                               |
++--------------------------------------------------------------------------------+
+| 10. Specific user's friend list and comments that they have made on all albums |
++--------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++---------------+------------+-----------+----------------------------+------------------+
+| friend_userID | first_name | last_name | comment_text               | album_name       |
++---------------+------------+-----------+----------------------------+------------------+
+|             5 | John       | Doe       | What a stunning cityscape! | City Exploration |
+|             6 | Jane       | Smith     | I love the city lights!    | City Exploration |
++---------------+------------+-----------+----------------------------+------------------+
+2 rows in set (0.00 sec)
+
++------------------------------------------------------------------------------+
+| Promot for stage                                                             |
++------------------------------------------------------------------------------+
+| 11. Check email address is following following right patter with '@' and '.' |
++------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
++--------+------------+-------------+-----------+-----------------------------+------------+--------+-----------+----------------------+------------------+
+| userID | first_name | middle_name | last_name | email                       | dob        | gender | password  | home_town_locationID | lives_locationID |
++--------+------------+-------------+-----------+-----------------------------+------------+--------+-----------+----------------------+------------------+
+|      9 | Michael    | R.          | Brown     | michaelbrown@socialmediacom | 1987-07-18 | M      | password5 |                    9 |               10 |
++--------+------------+-------------+-----------+-----------------------------+------------+--------+-----------+----------------------+------------------+
+1 row in set (0.00 sec)
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Promot for stage                                                                                                                                                                                                                                          |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 12. Constrain validation. Location Gampaha is referred in photos and videos and cascade constrain. 
+But not in users where it has restricted. Therefore Location Gampaha should be allowed to delete 
+and entries in Photos and Video should be removed.  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++---------+------------------+-----------+------------------------+------------+------------------+------------+-----------+
+| city    | state            | country   | caption                | media_type | album_name       | first_name | last_name |
++---------+------------------+-----------+------------------------+------------+------------------+------------+-----------+
+| Gampaha | Western Province | Sri Lanka | City Exploration Photo | Photo      | City Exploration | Emily      | Taylor    |
+| Gampaha | Western Province | Sri Lanka | City Exploration Video | Video      | City Exploration | Emily      | Taylor    |
++---------+------------------+-----------+------------------------+------------+------------------+------------+-----------+
+2 rows in set (0.00 sec)
+
+Empty set (0.00 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Empty set (0.00 sec)
+
++---------------------------------------------------------------------------------------------------------------------------------+
+| Promot for stage                                                                                                                |
++---------------------------------------------------------------------------------------------------------------------------------+
+| 13. Constrain validation. Location Colombo is used with restricted constrained in Users table hence should not allow to delete  |
++---------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++--------+------------+-------------+-----------+-----------------------------+------------+--------+-----------+----------------------+------------------+
+| userID | first_name | middle_name | last_name | email                       | dob        | gender | password  | home_town_locationID | lives_locationID |
++--------+------------+-------------+-----------+-----------------------------+------------+--------+-----------+----------------------+------------------+
+|      6 | Jane       | NULL        | Smith     | janesmith@socialmedia.com   | 1988-09-21 | F      | password2 |                    6 |                5 |
+|     13 | Thomas     | L.          | Davis     | thomasdavis@socialmedia.com | 1994-09-10 | M      | password9 |                    6 |                5 |
++--------+------------+-------------+-----------+-----------------------------+------------+--------+-----------+----------------------+------------------+
+2 rows in set (0.00 sec)
+
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`social_media_platform`.`users`, CONSTRAINT `FK_home_town_location` FOREIGN KEY (`home_town_locationID`) REFERENCES `locations` (`locationID`) ON DELETE RESTRICT ON UPDATE CASCADE)
++---------------------------------------------------------------------------+
+| Promot for stage                                                          |
++---------------------------------------------------------------------------+
+| 14. Find the most active user (based on the number of posts) in each city |
++---------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++--------------+------------+-----------+------------+
+| city         | first_name | last_name | post_count |
++--------------+------------+-----------+------------+
+| Kandy        | John       | Doe       |          2 |
+| Colombo      | Jane       | Smith     |          1 |
+| Colombo      | Thomas     | Davis     |          1 |
+| Galle        | David      | Johnson   |          1 |
+| Nuwara Eliya | Sarah      | Wilson    |          1 |
+| Trincomalee  | Michael    | Brown     |          1 |
+| Jaffna       | Emily      | Taylor    |          1 |
+| Bentota      | Daniel     | Anderson  |          1 |
+| Dambulla     | Olivia     | Miller    |          1 |
++--------------+------------+-----------+------------+
+9 rows in set (0.00 sec)
+
++---------------------------------------------------------------------------------+
+| Promot for stage                                                                |
++---------------------------------------------------------------------------------+
+| 15. Find the number of distinct users who have posted either a photo or a video |
++---------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++----------------+
+| distinct_users |
++----------------+
+|             10 |
++----------------+
+1 row in set (0.00 sec)
+
++------------------------------------------------------------------------+
+| Promot for stage                                                       |
++------------------------------------------------------------------------+
+| 16. Find the users who have both created an album and posted a comment |
++------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| John       | Doe       |
++------------+-----------+
+1 row in set (0.00 sec)
+
++--------------------------------------------------+
+| Promot for stage                                 |
++--------------------------------------------------+
+| 17. Find the average number of comments per post |
++--------------------------------------------------+
+1 row in set (0.00 sec)
+
++------------------+
+| average_comments |
++------------------+
+|           1.4545 |
++------------------+
+1 row in set (0.00 sec)
+
++----------------------------------------------------------+
+| Promot for stage                                         |
++----------------------------------------------------------+
+| 18. Find the users who have commented on their own posts |
++----------------------------------------------------------+
+1 row in set (0.00 sec)
+
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| John       | Doe       |
++------------+-----------+
+1 row in set (0.00 sec)
+
++----------------------------------------------------------------+
+| Promot for stage                                               |
++----------------------------------------------------------------+
+| 19. Find the most common city where users have their home town |
++----------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++-------+------------+
+| city  | user_count |
++-------+------------+
+| Kandy |          2 |
++-------+------------+
+1 row in set (0.00 sec)
+
++--------------------------------------------------------------+
+| Promot for stage                                             |
++--------------------------------------------------------------+
+| 20. Find the users who have posted the most number of photos |
++--------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++------------+-----------+-------------+
+| first_name | last_name | photo_count |
++------------+-----------+-------------+
+| John       | Doe       |           2 |
++------------+-----------+-------------+
+1 row in set (0.00 sec)
+
++-------------------------------------------------------------+
+| Promot for stage                                            |
++-------------------------------------------------------------+
+| 21. Find the users who have not posted any photos or videos |
++-------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+Empty set (0.00 sec)
+
+mysql> exit

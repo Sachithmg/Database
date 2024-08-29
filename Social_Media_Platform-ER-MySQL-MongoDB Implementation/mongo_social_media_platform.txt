@@ -1,0 +1,1057 @@
+Current Mongosh Log ID:	64ad09b95e55241f096dc12c
+Connecting to:		mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.9.0
+Using MongoDB:		6.0.6
+Using Mongosh:		1.9.0
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+------
+   The server generated these startup warnings when booting
+   2023-07-10T14:48:36.081+12:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+Loading file: mongo_social_media_platform.js
+------------Drop database--------------------- 
+
+-----------Switch to new database social_media_platform---------------- 
+
+-----Create Collection for Users and Index-------- 
+
+-----Insert multiple documents to users-------------- 
+
+------------ Print # of Documents in users collection---------- 
+
+Number of documents in users collection: 10
+-----------Update Friends------------------------------ 
+
+-----------List final user documents------------ 
+
+[
+  {
+    _id: ObjectId("64ad09ba5e55241f096dc12d"),
+    schema: 1,
+    first_name: 'John',
+    middle_name: 'A.',
+    last_name: 'Doe',
+    email: 'johndoe@socialmedia.com',
+    dob: ISODate("2000-05-15T00:00:00.000Z"),
+    gender: 'M',
+    password: 'password1',
+    home_town: { city: 'Kandy', state: 'Central Province', country: 'Sri Lanka' },
+    lives: {
+      city: 'Colombo',
+      state: 'Western Province',
+      country: 'Sri Lanka'
+    },
+    friends: [
+      ObjectId("64ad09ba5e55241f096dc12e"),
+      ObjectId("64ad09ba5e55241f096dc135")
+    ]
+  },
+  {
+    _id: ObjectId("64ad09ba5e55241f096dc12e"),
+    schema: 1,
+    first_name: 'Jane',
+    middle_name: null,
+    last_name: 'Smith',
+    email: 'janesmith@socialmedia.com',
+    dob: ISODate("1988-09-21T00:00:00.000Z"),
+    gender: 'F',
+    password: 'password2',
+    home_town: {
+      city: 'Colombo',
+      state: 'Western Province',
+      country: 'Sri Lanka'
+    },
+    lives: { city: 'Kandy', state: 'Central Province', country: 'Sri Lanka' },
+    friends: [ ObjectId("64ad09ba5e55241f096dc12f") ]
+  },
+  {
+    _id: ObjectId("64ad09ba5e55241f096dc12f"),
+    schema: 1,
+    first_name: 'David',
+    middle_name: 'C.',
+    last_name: 'Johnson',
+    email: 'davidjohnson@socialmedia.com',
+    dob: ISODate("1992-02-08T00:00:00.000Z"),
+    gender: 'M',
+    password: 'password3',
+    home_town: { city: 'Galle', state: 'Southern Province', country: 'Sri Lanka' },
+    lives: { city: 'Galle', state: 'Southern Province', country: 'Sri Lanka' },
+    friends: [ ObjectId("64ad09ba5e55241f096dc130") ]
+  },
+  {
+    _id: ObjectId("64ad09ba5e55241f096dc130"),
+    schema: 1,
+    first_name: 'Sarah',
+    middle_name: 'E.',
+    last_name: 'Wilson',
+    email: 'sarahwilson@socialmedia.com',
+    dob: ISODate("1995-11-30T00:00:00.000Z"),
+    gender: 'F',
+    password: 'password4',
+    home_town: {
+      city: 'Nuwara Eliya',
+      state: 'Central Province',
+      country: 'Sri Lanka'
+    },
+    lives: {
+      city: 'Nuwara Eliya',
+      state: 'Central Province',
+      country: 'Sri Lanka'
+    },
+    friends: [ ObjectId("64ad09ba5e55241f096dc131") ]
+  },
+  {
+    _id: ObjectId("64ad09ba5e55241f096dc131"),
+    schema: 1,
+    first_name: 'Michael',
+    middle_name: 'R.',
+    last_name: 'Brown',
+    email: 'michaelbrown@socialmedia.com',
+    dob: ISODate("1987-07-18T00:00:00.000Z"),
+    gender: 'M',
+    password: 'password5',
+    home_town: {
+      city: 'Trincomalee',
+      state: 'Eastern Province',
+      country: 'Sri Lanka'
+    },
+    lives: {
+      city: 'Anuradhapura',
+      state: 'North Central Province',
+      country: 'Sri Lanka'
+    },
+    friends: [ ObjectId("64ad09ba5e55241f096dc132") ]
+  },
+  {
+    _id: ObjectId("64ad09ba5e55241f096dc132"),
+    schema: 1,
+    first_name: 'Emily',
+    middle_name: 'M.',
+    last_name: 'Taylor',
+    email: 'emilytaylor@socialmedia.com',
+    dob: ISODate("1991-04-03T00:00:00.000Z"),
+    gender: 'F',
+    password: 'password6',
+    home_town: {
+      city: 'Jaffna',
+      state: 'Northern Province',
+      country: 'Sri Lanka'
+    },
+    lives: {
+      city: 'Bentota',
+      state: 'Southern Province',
+      country: 'Sri Lanka'
+    },
+    friends: [ ObjectId("64ad09ba5e55241f096dc133") ]
+  },
+  {
+    _id: ObjectId("64ad09ba5e55241f096dc133"),
+    schema: 1,
+    first_name: 'Daniel',
+    middle_name: 'J.',
+    last_name: 'Anderson',
+    email: 'danielanderson@socialmedia.com',
+    dob: ISODate("1989-12-12T00:00:00.000Z"),
+    gender: 'M',
+    password: 'password7',
+    home_town: {
+      city: 'Bentota',
+      state: 'Southern Province',
+      country: 'Sri Lanka'
+    },
+    lives: {
+      city: 'Jaffna',
+      state: 'Northern Province',
+      country: 'Sri Lanka'
+    },
+    friends: [ ObjectId("64ad09ba5e55241f096dc134") ]
+  },
+  {
+    _id: ObjectId("64ad09ba5e55241f096dc134"),
+    schema: 1,
+    first_name: 'Olivia',
+    middle_name: 'K.',
+    last_name: 'Miller',
+    email: 'oliviamiller@socialmedia.com',
+    dob: ISODate("1993-06-25T00:00:00.000Z"),
+    gender: 'F',
+    password: 'password8',
+    home_town: {
+      city: 'Dambulla',
+      state: 'Central Province',
+      country: 'Sri Lanka'
+    },
+    lives: {
+      city: 'Dambulla',
+      state: 'Central Province',
+      country: 'Sri Lanka'
+    },
+    friends: [ ObjectId("64ad09ba5e55241f096dc135") ]
+  },
+  {
+    _id: ObjectId("64ad09ba5e55241f096dc135"),
+    schema: 1,
+    first_name: 'Thomas',
+    middle_name: 'L.',
+    last_name: 'Davis',
+    email: 'thomasdavis@socialmedia.com',
+    dob: ISODate("1994-09-10T00:00:00.000Z"),
+    gender: 'M',
+    password: 'password9',
+    home_town: {
+      city: 'Colombo',
+      state: 'Western Province',
+      country: 'Sri Lanka'
+    },
+    lives: { city: 'Kandy', state: 'Central Province', country: 'Sri Lanka' },
+    friends: [ ObjectId("64ad09ba5e55241f096dc136") ]
+  },
+  {
+    _id: ObjectId("64ad09ba5e55241f096dc136"),
+    schema: 1,
+    first_name: 'Sophia',
+    middle_name: 'N.',
+    last_name: 'Wilson',
+    email: 'sophiawilson@socialmedia.com',
+    dob: ISODate("2005-03-27T00:00:00.000Z"),
+    gender: 'F',
+    password: 'password10',
+    home_town: { city: 'Kandy', state: 'Central Province', country: 'Sri Lanka' },
+    lives: {
+      city: 'Colombo',
+      state: 'Western Province',
+      country: 'Sri Lanka'
+    },
+    friends: [ ObjectId("64ad09ba5e55241f096dc12d") ]
+  }
+]
+
+
+
+
+-----Create Collection for Albums and Index-------- 
+
+---------------Insert Documents to Album------------- 
+
+ObjectId("64ad09ba5e55241f096dc12d")
+ObjectId("64ad09ba5e55241f096dc12e")
+ObjectId("64ad09ba5e55241f096dc12f")
+ObjectId("64ad09ba5e55241f096dc130")
+ObjectId("64ad09ba5e55241f096dc131")
+ObjectId("64ad09ba5e55241f096dc132")
+ObjectId("64ad09ba5e55241f096dc133")
+ObjectId("64ad09ba5e55241f096dc134")
+ObjectId("64ad09ba5e55241f096dc135")
+ObjectId("64ad09ba5e55241f096dc136")
+-----Insert multiple documents to Album-------------- 
+
+------------ Print # of Documents in Albums collection---------- 
+
+Number of documents in albums collection: 12
+-----------List Album documents------------ 
+
+[
+  {
+    _id: ObjectId("64ad09bb5e55241f096dc137"),
+    schema: 1,
+    name: 'Summer Vacation',
+    album_date: ISODate("2023-07-10T00:00:00.000Z"),
+    album_owner: ObjectId("64ad09ba5e55241f096dc12d"),
+    photos: [
+      {
+        caption: 'Summer Vacation Photo',
+        city: 'Kandy',
+        state: 'Central Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    videos: [],
+    posts: [
+      {
+        topic: 'Amazing sunset',
+        post_date: ISODate("2023-07-10T00:00:00.000Z"),
+        post_owner: ObjectId("64ad09ba5e55241f096dc12d"),
+        comments: [
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'I wish I could be there!',
+            user: ObjectId("64ad09ba5e55241f096dc12e")
+          },
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'Beautiful photo!',
+            user: ObjectId("64ad09ba5e55241f096dc12d")
+          }
+        ]
+      }
+    ]
+  },
+  {
+    _id: ObjectId("64ad09bb5e55241f096dc138"),
+    schema: 1,
+    name: 'New Year 2023',
+    album_date: ISODate("2023-07-10T00:00:00.000Z"),
+    album_owner: ObjectId("64ad09ba5e55241f096dc12d"),
+    photos: [ { caption: 'New Year 2023 Photo' } ],
+    videos: [],
+    posts: []
+  },
+  {
+    _id: ObjectId("64ad09bb5e55241f096dc139"),
+    schema: 1,
+    name: 'Family Reunion',
+    album_date: ISODate("2023-07-10T00:00:00.000Z"),
+    album_owner: ObjectId("64ad09ba5e55241f096dc12e"),
+    photos: [
+      {
+        caption: 'Family Reunion Photo',
+        city: 'Colombo',
+        state: 'Western Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    videos: [
+      {
+        caption: 'Family Reunion Video',
+        city: 'Colombo',
+        state: 'Western Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    posts: [
+      {
+        topic: 'Family gathering',
+        post_date: ISODate("2023-07-10T00:00:00.000Z"),
+        post_owner: ObjectId("64ad09ba5e55241f096dc12e"),
+        comments: [
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'Great to see everyone together!',
+            user: ObjectId("64ad09ba5e55241f096dc12f")
+          },
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'Such a lovely family photo!',
+            user: ObjectId("64ad09ba5e55241f096dc130")
+          }
+        ]
+      }
+    ]
+  },
+  {
+    _id: ObjectId("64ad09bb5e55241f096dc13a"),
+    schema: 1,
+    name: 'Hiking Adventures',
+    album_date: ISODate("2023-07-10T00:00:00.000Z"),
+    album_owner: ObjectId("64ad09ba5e55241f096dc12f"),
+    photos: [
+      {
+        caption: 'Hiking Adventures Photo',
+        city: 'Galle',
+        state: 'Southern Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    videos: [
+      {
+        caption: 'Hiking Adventures Video',
+        city: 'Galle',
+        state: 'Southern Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    posts: [
+      {
+        topic: 'Exploring nature',
+        post_date: ISODate("2023-07-10T00:00:00.000Z"),
+        post_owner: ObjectId("64ad09ba5e55241f096dc12f"),
+        comments: [
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'Nature at its finest!',
+            user: ObjectId("64ad09ba5e55241f096dc132")
+          },
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'What a breathtaking view!',
+            user: ObjectId("64ad09ba5e55241f096dc131")
+          }
+        ]
+      }
+    ]
+  },
+  {
+    _id: ObjectId("64ad09bb5e55241f096dc13b"),
+    schema: 1,
+    name: 'Beach Party',
+    album_date: ISODate("2023-07-10T00:00:00.000Z"),
+    album_owner: ObjectId("64ad09ba5e55241f096dc130"),
+    photos: [
+      {
+        caption: 'Beach Party Photo',
+        city: 'Nuwara Eliya',
+        state: 'Central Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    videos: [
+      {
+        caption: 'Beach Party Video',
+        city: 'Nuwara Eliya',
+        state: 'Central Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    posts: [
+      {
+        topic: 'Fun at the beach',
+        post_date: ISODate("2023-07-10T00:00:00.000Z"),
+        post_owner: ObjectId("64ad09ba5e55241f096dc130"),
+        comments: [
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'Wish I could join you guys!',
+            user: ObjectId("64ad09ba5e55241f096dc133")
+          },
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'Looks like a great time!',
+            user: ObjectId("64ad09ba5e55241f096dc134")
+          }
+        ]
+      }
+    ]
+  },
+  {
+    _id: ObjectId("64ad09bb5e55241f096dc13c"),
+    schema: 1,
+    name: 'Road Trip Memories',
+    album_date: ISODate("2023-07-10T00:00:00.000Z"),
+    album_owner: ObjectId("64ad09ba5e55241f096dc131"),
+    photos: [
+      {
+        caption: 'Road Trip Memories Photo',
+        city: 'Trincomalee',
+        state: 'Eastern Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    videos: [
+      {
+        caption: 'Road Trip Memories Video',
+        city: 'Trincomalee',
+        state: 'Eastern Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    posts: [
+      {
+        topic: 'Road trip memories',
+        post_date: ISODate("2023-07-10T00:00:00.000Z"),
+        post_owner: ObjectId("64ad09ba5e55241f096dc131"),
+        comments: [
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'Road trips are the best!',
+            user: ObjectId("64ad09ba5e55241f096dc136")
+          },
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'Such fond memories!',
+            user: ObjectId("64ad09ba5e55241f096dc135")
+          }
+        ]
+      }
+    ]
+  },
+  {
+    _id: ObjectId("64ad09bb5e55241f096dc13d"),
+    schema: 1,
+    name: 'City Exploration',
+    album_date: ISODate("2023-07-10T00:00:00.000Z"),
+    album_owner: ObjectId("64ad09ba5e55241f096dc132"),
+    photos: [
+      {
+        caption: 'City Exploration Photo',
+        city: 'Gampaha',
+        state: 'Western Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    videos: [
+      {
+        caption: 'City Exploration Video',
+        city: 'Gampaha',
+        state: 'Western Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    posts: [
+      {
+        topic: 'City skyline',
+        post_date: ISODate("2023-07-10T00:00:00.000Z"),
+        post_owner: ObjectId("64ad09ba5e55241f096dc132"),
+        comments: [
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'I love the city lights!',
+            user: ObjectId("64ad09ba5e55241f096dc12e")
+          },
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'What a stunning cityscape!',
+            user: ObjectId("64ad09ba5e55241f096dc12d")
+          }
+        ]
+      }
+    ]
+  },
+  {
+    _id: ObjectId("64ad09bb5e55241f096dc13e"),
+    schema: 1,
+    name: 'Friends',
+    album_date: ISODate("2023-07-10T00:00:00.000Z"),
+    album_owner: ObjectId("64ad09ba5e55241f096dc132"),
+    photos: [
+      {
+        caption: 'Friends Photo',
+        city: 'Jaffna',
+        state: 'Northern Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    videos: [
+      {
+        caption: 'Friends Video',
+        city: 'Jaffna',
+        state: 'Northern Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    posts: []
+  },
+  {
+    _id: ObjectId("64ad09bb5e55241f096dc13f"),
+    schema: 1,
+    name: 'Nature Photography',
+    album_date: ISODate("2023-07-10T00:00:00.000Z"),
+    album_owner: ObjectId("64ad09ba5e55241f096dc133"),
+    photos: [
+      {
+        caption: 'Nature Photography Photo',
+        city: 'Bentota',
+        state: 'Southern Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    videos: [
+      {
+        caption: 'Nature Photography Video',
+        city: 'Bentota',
+        state: 'Southern Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    posts: [
+      {
+        topic: 'Artistic expressions',
+        post_date: ISODate("2023-07-10T00:00:00.000Z"),
+        post_owner: ObjectId("64ad09ba5e55241f096dc133"),
+        comments: [
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'Beautiful artwork!',
+            user: ObjectId("64ad09ba5e55241f096dc12f")
+          },
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: "You're so talented!",
+            user: ObjectId("64ad09ba5e55241f096dc130")
+          }
+        ]
+      }
+    ]
+  },
+  {
+    _id: ObjectId("64ad09bb5e55241f096dc140"),
+    schema: 1,
+    name: 'Festival Highlights',
+    album_date: ISODate("2023-07-10T00:00:00.000Z"),
+    album_owner: ObjectId("64ad09ba5e55241f096dc134"),
+    photos: [
+      {
+        caption: 'Festival Highlights Photo',
+        city: 'Dambulla',
+        state: 'Central Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    videos: [
+      {
+        caption: 'Festival Highlights Video',
+        city: 'Dambulla',
+        state: 'Central Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    posts: [
+      {
+        topic: 'Festival moments',
+        post_date: ISODate("2023-07-10T00:00:00.000Z"),
+        post_owner: ObjectId("64ad09ba5e55241f096dc134"),
+        comments: [
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'Such a fun event!',
+            user: ObjectId("64ad09ba5e55241f096dc132")
+          },
+          {
+            date: ISODate("2023-07-10T00:00:00.000Z"),
+            text: 'I miss those festive vibes!',
+            user: ObjectId("64ad09ba5e55241f096dc131")
+          }
+        ]
+      }
+    ]
+  },
+  {
+    _id: ObjectId("64ad09bb5e55241f096dc141"),
+    schema: 1,
+    name: 'Artistic Creations',
+    album_date: ISODate("2023-07-10T00:00:00.000Z"),
+    album_owner: ObjectId("64ad09ba5e55241f096dc135"),
+    photos: [],
+    videos: [
+      {
+        caption: 'Artistic Creations Video',
+        city: 'Colombo',
+        state: 'Western Province',
+        country: 'Sri Lanka'
+      }
+    ],
+    posts: [
+      {
+        topic: 'Creative artwork',
+        post_date: ISODate("2023-07-10T00:00:00.000Z"),
+        post_owner: ObjectId("64ad09ba5e55241f096dc135")
+      }
+    ]
+  },
+  {
+    _id: ObjectId("64ad09bb5e55241f096dc142"),
+    schema: 1,
+    name: 'Wedding Memories',
+    album_date: ISODate("2023-07-10T00:00:00.000Z"),
+    album_owner: ObjectId("64ad09ba5e55241f096dc136"),
+    photos: [],
+    videos: [],
+    posts: [
+      {
+        topic: 'Wedding bliss',
+        post_date: ISODate("2023-07-10T00:00:00.000Z"),
+        post_owner: ObjectId("64ad09ba5e55241f096dc136")
+      },
+      {
+        topic: 'Wedding',
+        post_date: ISODate("2023-07-10T00:00:00.000Z"),
+        post_owner: ObjectId("64ad09ba5e55241f096dc12d")
+      }
+    ]
+  }
+]
+
+
+
+
+------------------------------********************----------------------------------------- 
+
+1. Find location-based photos and videos posted 
+
+{
+  _id: ObjectId("64ad09bb5e55241f096dc137"),
+  schema: 1,
+  name: 'Summer Vacation',
+  album_date: ISODate("2023-07-10T00:00:00.000Z"),
+  album_owner: ObjectId("64ad09ba5e55241f096dc12d"),
+  photos: [
+    {
+      caption: 'Summer Vacation Photo',
+      city: 'Kandy',
+      state: 'Central Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  videos: [],
+  posts: [
+    {
+      topic: 'Amazing sunset',
+      post_date: ISODate("2023-07-10T00:00:00.000Z"),
+      post_owner: ObjectId("64ad09ba5e55241f096dc12d"),
+      comments: [
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: 'I wish I could be there!',
+          user: ObjectId("64ad09ba5e55241f096dc12e")
+        },
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: 'Beautiful photo!',
+          user: ObjectId("64ad09ba5e55241f096dc12d")
+        }
+      ]
+    }
+  ]
+}
+------------------------------********************----------------------------------------- 
+
+
+
+------------------------------********************----------------------------------------- 
+
+2./ 3. Find location-based photos and videos posted. City starting with 'C' similar to LIKE or REGEXP pattern match in SQL 
+
+{
+  _id: ObjectId("64ad09bb5e55241f096dc139"),
+  schema: 1,
+  name: 'Family Reunion',
+  album_date: ISODate("2023-07-10T00:00:00.000Z"),
+  album_owner: ObjectId("64ad09ba5e55241f096dc12e"),
+  photos: [
+    {
+      caption: 'Family Reunion Photo',
+      city: 'Colombo',
+      state: 'Western Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  videos: [
+    {
+      caption: 'Family Reunion Video',
+      city: 'Colombo',
+      state: 'Western Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  posts: [
+    {
+      topic: 'Family gathering',
+      post_date: ISODate("2023-07-10T00:00:00.000Z"),
+      post_owner: ObjectId("64ad09ba5e55241f096dc12e"),
+      comments: [
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: 'Great to see everyone together!',
+          user: ObjectId("64ad09ba5e55241f096dc12f")
+        },
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: 'Such a lovely family photo!',
+          user: ObjectId("64ad09ba5e55241f096dc130")
+        }
+      ]
+    }
+  ]
+}
+{
+  _id: ObjectId("64ad09bb5e55241f096dc141"),
+  schema: 1,
+  name: 'Artistic Creations',
+  album_date: ISODate("2023-07-10T00:00:00.000Z"),
+  album_owner: ObjectId("64ad09ba5e55241f096dc135"),
+  photos: [],
+  videos: [
+    {
+      caption: 'Artistic Creations Video',
+      city: 'Colombo',
+      state: 'Western Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  posts: [
+    {
+      topic: 'Creative artwork',
+      post_date: ISODate("2023-07-10T00:00:00.000Z"),
+      post_owner: ObjectId("64ad09ba5e55241f096dc135")
+    }
+  ]
+}
+------------------------------********************----------------------------------------- 
+
+
+
+------------------------------********************----------------------------------------- 
+
+4. Find location-based photos and videos posted. City starting with 'B'  and 'G' having 7 letters with REGEXP pattern match 
+
+{
+  _id: ObjectId("64ad09bb5e55241f096dc13d"),
+  schema: 1,
+  name: 'City Exploration',
+  album_date: ISODate("2023-07-10T00:00:00.000Z"),
+  album_owner: ObjectId("64ad09ba5e55241f096dc132"),
+  photos: [
+    {
+      caption: 'City Exploration Photo',
+      city: 'Gampaha',
+      state: 'Western Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  videos: [
+    {
+      caption: 'City Exploration Video',
+      city: 'Gampaha',
+      state: 'Western Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  posts: [
+    {
+      topic: 'City skyline',
+      post_date: ISODate("2023-07-10T00:00:00.000Z"),
+      post_owner: ObjectId("64ad09ba5e55241f096dc132"),
+      comments: [
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: 'I love the city lights!',
+          user: ObjectId("64ad09ba5e55241f096dc12e")
+        },
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: 'What a stunning cityscape!',
+          user: ObjectId("64ad09ba5e55241f096dc12d")
+        }
+      ]
+    }
+  ]
+}
+{
+  _id: ObjectId("64ad09bb5e55241f096dc13f"),
+  schema: 1,
+  name: 'Nature Photography',
+  album_date: ISODate("2023-07-10T00:00:00.000Z"),
+  album_owner: ObjectId("64ad09ba5e55241f096dc133"),
+  photos: [
+    {
+      caption: 'Nature Photography Photo',
+      city: 'Bentota',
+      state: 'Southern Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  videos: [
+    {
+      caption: 'Nature Photography Video',
+      city: 'Bentota',
+      state: 'Southern Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  posts: [
+    {
+      topic: 'Artistic expressions',
+      post_date: ISODate("2023-07-10T00:00:00.000Z"),
+      post_owner: ObjectId("64ad09ba5e55241f096dc133"),
+      comments: [
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: 'Beautiful artwork!',
+          user: ObjectId("64ad09ba5e55241f096dc12f")
+        },
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: "You're so talented!",
+          user: ObjectId("64ad09ba5e55241f096dc130")
+        }
+      ]
+    }
+  ]
+}
+------------------------------********************----------------------------------------- 
+
+
+
+------------------------------********************----------------------------------------- 
+
+5. Find location-based photos and videos posted. City having 'B'  and 'G' letters anywhere with REGEXP pattern match 
+
+{
+  _id: ObjectId("64ad09bb5e55241f096dc13a"),
+  schema: 1,
+  name: 'Hiking Adventures',
+  album_date: ISODate("2023-07-10T00:00:00.000Z"),
+  album_owner: ObjectId("64ad09ba5e55241f096dc12f"),
+  photos: [
+    {
+      caption: 'Hiking Adventures Photo',
+      city: 'Galle',
+      state: 'Southern Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  videos: [
+    {
+      caption: 'Hiking Adventures Video',
+      city: 'Galle',
+      state: 'Southern Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  posts: [
+    {
+      topic: 'Exploring nature',
+      post_date: ISODate("2023-07-10T00:00:00.000Z"),
+      post_owner: ObjectId("64ad09ba5e55241f096dc12f"),
+      comments: [
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: 'Nature at its finest!',
+          user: ObjectId("64ad09ba5e55241f096dc132")
+        },
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: 'What a breathtaking view!',
+          user: ObjectId("64ad09ba5e55241f096dc131")
+        }
+      ]
+    }
+  ]
+}
+{
+  _id: ObjectId("64ad09bb5e55241f096dc13d"),
+  schema: 1,
+  name: 'City Exploration',
+  album_date: ISODate("2023-07-10T00:00:00.000Z"),
+  album_owner: ObjectId("64ad09ba5e55241f096dc132"),
+  photos: [
+    {
+      caption: 'City Exploration Photo',
+      city: 'Gampaha',
+      state: 'Western Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  videos: [
+    {
+      caption: 'City Exploration Video',
+      city: 'Gampaha',
+      state: 'Western Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  posts: [
+    {
+      topic: 'City skyline',
+      post_date: ISODate("2023-07-10T00:00:00.000Z"),
+      post_owner: ObjectId("64ad09ba5e55241f096dc132"),
+      comments: [
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: 'I love the city lights!',
+          user: ObjectId("64ad09ba5e55241f096dc12e")
+        },
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: 'What a stunning cityscape!',
+          user: ObjectId("64ad09ba5e55241f096dc12d")
+        }
+      ]
+    }
+  ]
+}
+{
+  _id: ObjectId("64ad09bb5e55241f096dc13f"),
+  schema: 1,
+  name: 'Nature Photography',
+  album_date: ISODate("2023-07-10T00:00:00.000Z"),
+  album_owner: ObjectId("64ad09ba5e55241f096dc133"),
+  photos: [
+    {
+      caption: 'Nature Photography Photo',
+      city: 'Bentota',
+      state: 'Southern Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  videos: [
+    {
+      caption: 'Nature Photography Video',
+      city: 'Bentota',
+      state: 'Southern Province',
+      country: 'Sri Lanka'
+    }
+  ],
+  posts: [
+    {
+      topic: 'Artistic expressions',
+      post_date: ISODate("2023-07-10T00:00:00.000Z"),
+      post_owner: ObjectId("64ad09ba5e55241f096dc133"),
+      comments: [
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: 'Beautiful artwork!',
+          user: ObjectId("64ad09ba5e55241f096dc12f")
+        },
+        {
+          date: ISODate("2023-07-10T00:00:00.000Z"),
+          text: "You're so talented!",
+          user: ObjectId("64ad09ba5e55241f096dc130")
+        }
+      ]
+    }
+  ]
+}
+------------------------------********************----------------------------------------- 
+
+
+
+------------------------------********************----------------------------------------- 
+
+6. No of comments per album 
+
+Album ID: 64ad09bb5e55241f096dc137, Comment Count: 2
+Album ID: 64ad09bb5e55241f096dc138, Comment Count: 0
+Album ID: 64ad09bb5e55241f096dc139, Comment Count: 2
+Album ID: 64ad09bb5e55241f096dc13a, Comment Count: 2
+Album ID: 64ad09bb5e55241f096dc13b, Comment Count: 2
+Album ID: 64ad09bb5e55241f096dc13c, Comment Count: 2
+Album ID: 64ad09bb5e55241f096dc13d, Comment Count: 2
+Album ID: 64ad09bb5e55241f096dc13e, Comment Count: 0
+Album ID: 64ad09bb5e55241f096dc13f, Comment Count: 2
+Album ID: 64ad09bb5e55241f096dc140, Comment Count: 2
+Album ID: 64ad09bb5e55241f096dc141, Comment Count: 0
+Album ID: 64ad09bb5e55241f096dc142, Comment Count: 0
+------------------------------********************----------------------------------------- 
+
+
+
+------------------------------********************----------------------------------------- 
+
+19. Find the most common city where users have their home town 
+
+Most Common Hometown City: Kandy, Count: 2
+------------------------------********************----------------------------------------- 
+
+
+
+------------------------------********************----------------------------------------- 
+
+20. Find the users who have posted the most number of photos 
+
+No albums found.
+------------------------------********************----------------------------------------- 
+
+
+
+------------------------------********************----------------------------------------- 
+
+21. Find the users who have not posted any photos or videos 
+
+Users with no photos or videos:
+User ID: 64ad09ba5e55241f096dc136, Name: Sophia Wilson
+------------------------------********************----------------------------------------- 
+
+
+
